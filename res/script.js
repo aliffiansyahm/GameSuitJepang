@@ -15,6 +15,16 @@ let gunting = document.getElementById('gunting');
 let kertas = document.getElementById('kertas');
 
 
+if(localStorage.getItem("skorKen")){
+    skorKen = localStorage.getItem("skorKen")
+    displaySkorKen.innerHTML = skorKen;
+}
+
+if(localStorage.getItem("skorPlayer")){
+    skorPlayer = localStorage.getItem("skorPlayer")
+    displaySkorPlayer.innerHTML = skorPlayer;
+}
+
 startGame.addEventListener("click",() => {
     splashScreen.style.top = "-120vh";
     splashScreen.style.transition = "1s";
@@ -86,11 +96,13 @@ function result(who) {
     switch (who) {
         case "ken":
             skorKen++;
+            localStorage.setItem("skorKen",skorKen);
             displaySkorKen.innerHTML = skorKen;
             console.log("Ninjaken menang");
             break;
         case "player":
             skorPlayer++;
+            localStorage.setItem("skorPlayer",skorPlayer);
             displaySkorPlayer.innerHTML = skorPlayer;
             console.log("Anda menang");
             break;
@@ -112,5 +124,6 @@ reset.addEventListener("click",() => {
         skorPlayer = 0;
         displaySkorKen.innerHTML = skorKen;
         displaySkorPlayer.innerHTML = skorPlayer;
+        localStorage.slear();
     }
 })
