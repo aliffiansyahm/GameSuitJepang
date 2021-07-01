@@ -43,14 +43,13 @@ button{
     width: 100vw;
     height: 100vh;
     background: #eceff1;
-    display: none;
+    /* display: none; */
     /* splach screen */
     box-shadow: 0 5px 50px #aaa;
 }
 
 .splash .center{
-    display: none;
-    /* tulisan start */
+    tulisan start
     width: 100%;
     margin: auto;
     padding: 165px 15px 15px;
@@ -89,7 +88,6 @@ button{
     top: 0;
     left: 0;
     z-index: 300;
-    display: none;
     width: 100vw;
     height: 100vh;
     background: #eceff1;
@@ -208,4 +206,48 @@ button{
     font-size: .8em;
     border: dashed 2px #6869a1;
     border-radius: 50px;
+}
+
+@media (min-width: 500px) {
+    .splash .center {
+        padding-top: 240px;
+        background-size: 260px;
+    }
+
+    .splash .center h1 {
+        margin: 0 0 30px;
+        font-size: 4em;
+        -webkit-text-stroke: 3px #4a5f6c;
+    }
+
+    .splash .center button{
+        margin-top: 15px;
+        font-size: 1.5em;
+    }
+
+    .skor {
+        min-width: 80px;
+    }
+
+    .pilih {
+        width: auto;
+        padding: 10px 50px 15px;
+        border: solid 5px #7accb9;
+        border-bottom: none;
+        border-radius: 50px 50px 0 0;
+    }
+
+    .pilih button{
+        width: 90px;
+        height: 90px;
+    }
+
+    #reset {
+        font-size: 1em;
+    }
+}
+@media (min-width: 300px) and (min-height: 500px) {
+    .block{
+        display: none;
+    }
 }
